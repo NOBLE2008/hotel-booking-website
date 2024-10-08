@@ -10,7 +10,7 @@ import { HiEyeSlash, HiMapPin, HiUsers } from "react-icons/hi2";
 
 export async function generateStaticParams() {
   const cabins = await getCabins();
-  return cabins.map((cabin) => ({ params: { CID: cabin.id } }));
+  return cabins.map((cabin) => ({ CID: String(cabin.id) }));
 }
 export default async function Page(props: any) {
   const { params } = props;
